@@ -1,4 +1,4 @@
-name: githubActions_test
+name: githubActions_test1
 run-name: Run tests
 on: [push]
 jobs:

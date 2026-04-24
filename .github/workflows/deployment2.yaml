@@ -1,4 +1,4 @@
-name: githubActions_test
+name: githubActions_test2
 run-name: Run on push
 on: [push]
 jobs:
@@ -12,6 +12,7 @@ jobs:
       - name: Lint code
         run: npm run lint
   test:
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -21,6 +22,7 @@ jobs:
       - name: run tests
         run: npm run test
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
