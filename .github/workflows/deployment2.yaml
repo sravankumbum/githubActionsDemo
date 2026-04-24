@@ -1,0 +1,34 @@
+name: githubActions_test
+run-name: Run on push
+on: [push]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm ci
+      - name: Lint code
+        run: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm ci
+      - name: run tests
+        run: npm run test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: install dependencies
+        run: npm ci
+      - name: build code
+        run: npm run build
+      - name: Deploy code
+        run: echo "Deploying code..."
+  
