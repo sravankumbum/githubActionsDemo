@@ -2,7 +2,6 @@ name: githubActions_test
 run-name: Run tests
 on: [push]
 jobs:
-  test:
   deploy:
     runs-on: ubuntu-latest
     steps:
